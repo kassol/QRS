@@ -13,7 +13,7 @@
  *                                                                         *
  ***************************************************************************/
  
- #include "QRsmemory.h"
+ #include "qrsmemory.h"
  
  static std::list<QRsMemory::MemoryNode> QRsMemory::m_listMemoryPool;
  

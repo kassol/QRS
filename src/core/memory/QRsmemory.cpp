@@ -29,9 +29,14 @@
 	{
 		if(temIte->bIsUsed == false && temIte->size*0.5 < nSize)
 		{
-			
+			temIte->bIsUsed = true;
+			return temIte->pBuf;
 		}
 		++temIte;
 	}
 	void* p = malloc(nSize);
+	MemoryNode mn(p, true, nSize);
+	m_listMemoryPool.push_front(mn);
+	return p;
  }
+ 

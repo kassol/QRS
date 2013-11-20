@@ -54,3 +54,14 @@
 	}
  }
  
+ void QRsMemory::Reset()
+ {
+	std::list<MemoryNode>::iterator temIte = m_listMemoryPool.begin();
+	while(temIte != m_listMemoryPool.end())
+	{
+		free(temIte->pBuf);
+		++temIte;
+	}
+	m_listMemoryPool.clear();
+ }
+ 

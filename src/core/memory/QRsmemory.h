@@ -26,7 +26,7 @@
 	static void Initialize();
 	static void* Malloc(long long nSize);
 	static void Free(void* p);
-	static void Refresh();
+	static void Reset();
  public:
 	class MemoryNode
 	{

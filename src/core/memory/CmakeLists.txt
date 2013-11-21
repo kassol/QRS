@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 2.8)
+
+SET(LIBQRSMEMORY_SRC qrsmemory.cpp)
+
+ADD_LIBRARY(qrsmemory_dynamic SHARED ${LIBQRSMEMORY_SRC})
+ADD_LIBRARY(qrsmemory_static STATIC ${LIBQRSMEMORY_SRC})
+
+SET_TARGET_PROPERTIES(qrsmemory_dynamic PROPERTIES OUTPUT_NAME "qrsmemory_dynamic")
+SET_TARGET_PROPERTIES(qrsmemory_static PROPERTIES OUTPUT_NAME "qrsmemory_static")
+
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)

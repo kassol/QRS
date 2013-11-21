@@ -12,10 +12,12 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
+
+#define QRSMEMORY_EXPORTS
+
+#include "qrsmemory.h"
  
- #include "qrsmemory.h"
- 
- static std::list<QRsMemory::MemoryNode> QRsMemory::m_listMemoryPool;
+std::list<QRsMemory::MemoryNode> QRsMemory::m_listMemoryPool;
  
  void QRsMemory::Initialize()
  {

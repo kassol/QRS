@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 2.8)
+
+
+SET(LIBQRSMEMORY_SRC qrsmemory.cpp)
+
+
+
+ADD_LIBRARY(qrsmemory SHARED ${LIBQRSMEMORY_SRC})
+
+
+
+
+SET_TARGET_PROPERTIES(qrsmemory PROPERTIES OUTPUT_NAME "qrsmemory")
+
+
+
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
+
+

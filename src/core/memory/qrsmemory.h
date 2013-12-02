@@ -14,13 +14,22 @@ email                : kassol dot zx at gmail dot com
 ***************************************************************************/
 #include <list>
 
-#ifdef QRSMEMORY_EXPORTS
-#define QRSMEMORY_API __declspec(dllexport)
-#else
-#define QRSMEMORY_API __declspec(dllimport)
+#ifdef WIN32
+	#ifdef QRSMEMORY_EXPORTS
+		#define QRSMEMORY_API __declspec(dllexport)
+	#else
+		#define QRSMEMORY_API __declspec(dllimport)
+	#endif
 #endif
 
 
+#ifdef linux
+	#ifdef QRSMEMORY_EXPORTS
+		#define QRSMEMORY_API
+	#else
+		#define QRSMEMORY_API
+	#endif
+#endif
 
 
 
@@ -34,14 +43,14 @@ private:
 
 public:
 	static void Initialize();
-	static void* Malloc(long long nSize);
+	static void* Malloc(unsigned int nSize);
 	static void Free(void* p);
 	static void Reset();
-public:
+private:
 	class MemoryNode
 	{
 	public:
-		MemoryNode(void* p, bool bused, long long s)
+		MemoryNode(void* p, bool bused, unsigned int s)
 		{
 			pBuf = p; 
 			bIsUsed = bused; 
@@ -49,7 +58,7 @@ public:
 		}
 		void* pBuf;
 		bool bIsUsed;
-		long long size;
+		unsigned int size;
 	};
 
 private:

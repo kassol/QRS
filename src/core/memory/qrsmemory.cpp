@@ -24,7 +24,7 @@ std::list<QRsMemory::MemoryNode> QRsMemory::m_listMemoryPool;
 	m_listMemoryPool.clear();
  }
  
- void* QRsMemory::Malloc(long long nSize)
+ void* QRsMemory::Malloc(unsigned int nSize)
  {
 	std::list<MemoryNode>::iterator temIte = m_listMemoryPool.begin();
 	while(temIte != m_listMemoryPool.end())

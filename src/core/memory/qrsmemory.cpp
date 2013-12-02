@@ -12,6 +12,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
+#include <stdlib.h>
 
 #define QRSMEMORY_EXPORTS
 

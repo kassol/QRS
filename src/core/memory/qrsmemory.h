@@ -44,7 +44,7 @@ private:
 public:
 	static void Initialize();
 	static void* Malloc(unsigned int nSize);
-	static void Free(void* p);
+	static void Free(void** p);
 	static void Reset();
 private:
 	class MemoryNode

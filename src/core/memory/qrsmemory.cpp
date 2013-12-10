@@ -43,18 +43,19 @@ std::list<QRsMemory::MemoryNode> QRsMemory::m_listMemoryPool;
 	return p;
  }
  
- void QRsMemory::Free(void* p)
+ void QRsMemory::Free(void** p)
  {
 	std::list<MemoryNode>::iterator temIte = m_listMemoryPool.begin();
 	while(temIte != m_listMemoryPool.end())
 	{
-		if(temIte->pBuf == p)
+		if(temIte->pBuf == *p)
 		{
 			temIte->bIsUsed = false;
 			break;
 		}
 		++temIte;
 	}
+	*p = NULL;
  }
  
  void QRsMemory::Reset()
